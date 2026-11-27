@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Care Hospital | Patient Appointment</title>
+  <style>
+    * {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      background-color: whitesmoke;
+      color: black;
+      margin: 20px;
+    }
+
+    header {
+      background-color: lightblue;
+      color: navy;
+      text-align: center;
+      padding: 15px;
+    }
+
+    footer {
+      background-color: lightgray;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    section, article {
+      background-color: white;
+      border: 1px solid gray;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    aside {
+      background-color: lightpink;
+      border: 3px solid red;
+      padding: 15px;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    fieldset {
+      padding: 15px;
+      border: 2px solid navy;
+    }
+
+    input, select, textarea {
+      padding: 6px;
+      margin-top: 4px;
+    }
+
+    button {
+      background-color: navy;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+      outline: 3px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Top Header & Navigation -->
+  <header>
+    <h1>City Care Hospital</h1>
+    <nav aria-label="Primary Navigation">
+      <a href="#services">Services</a> |
+      <a href="#doctors">Doctors</a> |
+      <a href="#appointment">Book Appointment</a>
+    </nav>
+  </header>
+
+  <!-- 2. Primary Page Content -->
+  <main>
+
+    <!-- Section 1: Hospital Services -->
+    <section id="services">
+      <h2>Hospital Services</h2>
+      <ul>
+        <li>24/7 Emergency Care</li>
+        <li>General Medicine &amp; Diagnostics</li>
+        <li>Cardiology &amp; Orthopedics</li>
+      </ul>
+    </section>
+
+    <!-- Section 2: Doctor Information -->
+    <section id="doctors">
+      <h2>Our Doctors</h2>
+
+      <article>
+        <h3>Dr. Ananya Sharma</h3>
+        <p>Specialty: Cardiologist (10+ Years Experience)</p>
+      </article>
+
+      <article>
+        <h3>Dr. Rajesh Verma</h3>
+        <p>Specialty: General Physician</p>
+      </article>
+    </section>
+
+    <!-- Section 3: Accessible Patient Appointment Form -->
+    <section id="appointment">
+      <h2>Book a Patient Appointment</h2>
+
+      <form action="/submit-appointment" method="post">
+        <fieldset>
+          <legend>Patient &amp; Appointment Details</legend>
+
+          <label for="patient-name">Patient Full Name:</label><br>
+          <input type="text" id="patient-name" name="patient_name" minlength="3" required><br><br>
+
+          <label for="patient-email">Email Address:</label><br>
+          <input type="email" id="patient-email" name="patient_email" autocomplete="email" required><br><br>
+
+          <label for="patient-phone">10-Digit Mobile Number:</label><br>
+          <input type="tel" id="patient-phone" name="patient_phone" pattern="[0-9]{10}" title="Enter a 10-digit mobile number" required><br><br>
+
+          <p>Gender:</p>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br><br>
+
+          <label for="department">Select Department:</label><br>
+          <select id="department" name="department" required>
+            <option value="">-- Choose Department --</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="general">General Medicine</option>
+            <option value="orthopedics">Orthopedics</option>
+          </select><br><br>
+
+          <label for="app-date">Preferred Date:</label><br>
+          <input type="date" id="app-date" name="appointment_date" required><br><br>
+
+          <label for="symptoms">Reason for Visit:</label><br>
+          <textarea id="symptoms" name="symptoms" rows="4" cols="35" required></textarea><br><br>
+
+          <button type="submit">Confirm Appointment</button>
+          <input type="reset" value="Clear Form">
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Tangential Info -->
+    <aside>
+      <h3>Emergency Helpline</h3>
+      <p>Call <strong>108</strong> for immediate ambulance assistance.</p>
+    </aside>
+
+  </main>
+
+  <!-- 3. Page Footer -->
+  <footer>
+    <p>&copy; 2026 City Care Hospital. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
